@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":[],"mappings":";;AAAA;;;;;;AAEA,IAAI,IAAI,GAAJ","file":"app.js","sourcesContent":["import _ from 'lodash';\n\nlet x = 123;"],"sourceRoot":"/source/"}

@@ -1,0 +1,6 @@
+{
+	"HELLO": "Привет",
+	"VALUE": "Вот ваше значение: {value}",
+	"TODAY": "Сегодня {value}",
+	"NUM": "У вас {value, plural, =0 {нет комментариев} one {<strong>#</strong> комментарий} few {<strong>#</strong> комментария} many {<strong>#</strong> комментариев} other {<strong>#</strong> комментариев}}"
+}

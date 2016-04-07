@@ -1,0 +1,6 @@
+{
+	"HELLO": "Hello",
+	"VALUE": "Here is your value: {value}",
+	"TODAY": "Today is {value}",
+	"NUM": "You have {value, plural, =0 {no comments} =1 {<strong>1</strong> comment} other {<strong>#</strong> comments}}"
+}
