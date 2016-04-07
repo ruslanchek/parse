@@ -1,3 +1,5 @@
 import _ from 'lodash';
 
-let x = 123;
+_.times(6, (i) => {
+    console.log(`xxx ${i}`)
+});

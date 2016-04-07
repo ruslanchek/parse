@@ -7,6 +7,7 @@ const notify = require('gulp-notify');
 const browserSync = require('browser-sync');
 const babel = require('gulp-babel');
 const browserify = require('browserify');
+const babelify = require('babelify');
 const concat = require('gulp-concat');
 const watch = require('gulp-watch');
 const source = require('vinyl-source-stream');
@@ -52,13 +53,17 @@ function clean() {
 }
 
 function bundle() {
-    return gulp.src('src/js/**/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(concat('app.js'))
-        .pipe(sourcemaps.write('.'))
+    return browserify({
+        entries: 'src/js/app.js',
+        extensions: [
+            '.jsx',
+            '.js'
+        ],
+        debug: true
+    })
+        .transform(babelify)
+        .bundle()
+        .pipe(source('app.js'))
         .pipe(gulp.dest('dist'));
 }
 
@@ -139,8 +144,8 @@ gulp.task('default', ['browser-sync'], function() {
     startExpress(port + 1);
 
     gulp.watch([
-        './src/ts/**/*.ts',
-        './src/ts/**/*.tsx'
+        './src/ts/**/*.js',
+        './src/ts/**/*.jsx'
     ], function() {
         bundle();
     });
