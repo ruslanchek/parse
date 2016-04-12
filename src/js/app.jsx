@@ -8,9 +8,13 @@ Parse.initialize('123', '123', '123');
 Parse.serverURL = 'http://localhost:1337/parse';
 
 class CommentBlock extends ParseComponent {
+    constructor() {
+        super();
+    }
+
     observe(props, state) {
         return {
-            items: new Parse.Query('Comment').ascending('createdAt')
+            items: new Parse.Query('Comment')
         };
     }
 
@@ -23,7 +27,7 @@ class CommentBlock extends ParseComponent {
     }
 
     _refresh() {
-        this.refreshQueries('comments');
+        this.refreshQueries('items');
     }
 
     render () {
